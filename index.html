@@ -5,5 +5,5 @@ title: Home
 Dobrodošli na AutomationHomeX -g.
 
 {% for post in site._posts %}
-  - {{ post.title }}
+  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
 {% endfor %}
