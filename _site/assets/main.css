@@ -646,4 +646,41 @@ table td {
   color: #099;
 }
 
+
+/* Element | https://automationhomex.github.io/python/automatizacija/2026/07/17/python-dekoratori.html */
+
+.main-content-wrap {
+  background-color: beige;
+}
+
+/* Inline | https://automationhomex.github.io/python/automatizacija/2026/07/17/python-dekoratori.html */
+
+.main-content-wrap {
+}
+
+.main-content-wrap {
+}
+
+/* just-the-docs-default.css | https://automationhomex.github.io/assets/css/just-the-docs-default.css */
+
+.highlight, pre.highlight {
+  /* background: #fff; */
+  /* color: #5c5962; */
+  background: #7777725c;
+  color: #8170a4;
+}
+
+.highlight pre {
+  /* background: #fff; */
+  background: #dcdcdc;
+  margin: -3px !important;
+  padding: 7px !important;
+  border-radius: 10px;
+}
+
+div.highlighter-rouge pre.highlight, div.highlighter-rouge code {
+  /* border: 0; */
+}
+
+
 /*# sourceMappingURL=main.css.map */
