@@ -2,7 +2,7 @@ title: AutomationHomeX
 description: Automatizacija, razvoj i moji projekti.
 url: "https://automationhomex.github.io"
 baseurl: ""
-theme: minima
+theme: just-the-docs
 exclude:
   - automate/
 # Dodaj ovo u _config.yml
