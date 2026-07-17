@@ -1,12 +1,3 @@
-theme: "just-the-docs"
-
-# Just the Docs specifične opcije
-remote_theme: "pmarsceill/just-the-docs"
-
-title: "AutomationHomeX"
-description: "Blog i automatizacija"
-
-# Ovo ti treba za navigaciju
-nav_external_links:
-  - title: "GitHub"
-    url: "https://github.com/automationhomex"
+title: AutomationHomeX
+description: "Moj sajt o automatizaciji"
+theme: just-the-docs

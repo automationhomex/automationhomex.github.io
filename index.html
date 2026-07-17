@@ -1,11 +1,9 @@
-<h1>Blog</h1>
-<p>Dobrodošli na AutomationHomeX -g.</p>
+---
+layout: default
+title: Home
+---
+Dobrodošli na AutomationHomeX -g.
 
-<ul class="posts">
-  {% for post in site._posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <small>{{ post.date | date: "%B %-d, %Y" }}</small>
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  - {{ post.title }}
+{% endfor %}
