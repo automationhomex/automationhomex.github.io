@@ -2,8 +2,149 @@
 layout: default
 title: Home
 ---
-Dobrodošli na AutomationHomeX -g.
 
-{% for post in site.posts %}
-  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-{% endfor %}
+<style>
+  /* 📌 OVAJ BLOK MOŽEŠ SLOBODNO MENJATI */
+  /* ======================================== */
+
+  /* Kontejner za sve postove */
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+
+  /* Svaka kartica (card) za post */
+  .post-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Hover efekt — kartica blago "iskače" */
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: #4f46e5;
+  }
+
+  /* Naslov posta — link */
+  .post-card a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1e293b;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .post-card a:hover {
+    color: #4f46e5;
+  }
+
+  /* Datum posta — manji font, siva boja */
+  .post-date {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Kategorije — tagovi */
+  .post-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .post-category {
+    display: inline-block;
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* 🔧 KAKO DA PRILAGODIŠ (CUSTOMIZUJEŠ) */
+  /* ----------------------------------------
+     
+     1. BOJE:
+        - border:           #e0e0e0  → zameni sa npr. #d1d5db (siva)
+        - border-color na hover: #4f46e5 → zameni sa npr. #2563eb (plava)
+        - background kartice: #fff   → zameni sa npr. #fafafa
+        - boja naslova:     #1e293b  → zameni sa npr. #111827
+        - boja naslova hover: #4f46e5 → zameni sa npr. #dc2626 (crvena)
+        - boja datuma:      #94a3b8  → zameni sa npr. #6b7280
+        - background tagova: #eef2ff → zameni sa npr. #fef3c7 (žuta)
+        - boja teksta tagova: #4f46e5 → zameni sa npr. #92400e
+        
+     2. VELIČINE:
+        - font-size naslova: 1.15rem → veći: 1.3rem, manji: 1rem
+        - padding kartice: 1.2rem 1.5rem → veći: 1.5rem 2rem
+        - border-radius: 10px → veći: 16px, manji: 6px, četvrtast: 0px
+        
+     3. EFEKTI:
+        - translateY(-4px) → veći: -8px, manji: -2px
+        - box-shadow na hover → pojačaj ili oslabi
+        
+     4. DODAVANJE NOVIH STILOVA:
+        Samo nastavi pisati CSS ispod. Npr. za pozadinsku boju cele stranice:
+        
+        body {
+          background: #f8fafc;
+        }
+
+     Ukoliko želiš potpuno drugačiji izgled (npr. grid umesto liste),
+     samo obriši sav CSS iznad i napiši svoj.
+  */
+
+  /* TAMNI REŽIM (ako tema podržava) */
+  @media (prefers-color-scheme: dark) {
+    .post-card {
+      background: #1e293b;
+      border-color: #334155;
+    }
+    .post-card a {
+      color: #e2e8f0;
+    }
+    .post-card a:hover {
+      color: #818cf8;
+    }
+    .post-date {
+      color: #64748b;
+    }
+    .post-card:hover {
+      border-color: #818cf8;
+    }
+    .post-category {
+      background: #312e81;
+      color: #c7d2fe;
+    }
+  }
+</style>
+
+<p>Dobrodošli na AutomationHomeX.</p>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li class="post-card">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="post-date">{{ post.date | date: "%d. %m. %Y." }}</span>
+      {% if post.categories %}
+        <div class="post-categories">
+          {% for category in post.categories %}
+            <span class="post-category">{{ category }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
