@@ -1,0 +1,7 @@
+title: AutomationHomeX
+description: Automatizacija, razvoj i moji projekti.
+url: "https://automationhomex.github.io"
+baseurl: ""
+theme: minima
+exclude:
+  - automate/
