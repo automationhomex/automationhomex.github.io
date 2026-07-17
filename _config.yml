@@ -5,3 +5,6 @@ baseurl: ""
 theme: minima
 exclude:
   - automate/
+# Dodaj ovo u _config.yml
+sass:
+  style: compressed
