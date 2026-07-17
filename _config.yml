@@ -1,10 +1,12 @@
-title: AutomationHomeX
-description: Automatizacija, razvoj i moji projekti.
-url: "https://automationhomex.github.io"
-baseurl: ""
-theme: just-the-docs
-exclude:
-  - automate/
-# Dodaj ovo u _config.yml
-sass:
-  style: compressed
+theme: "just-the-docs"
+
+# Just the Docs specifične opcije
+remote_theme: "pmarsceill/just-the-docs"
+
+title: "AutomationHomeX"
+description: "Blog i automatizacija"
+
+# Ovo ti treba za navigaciju
+nav_external_links:
+  - title: "GitHub"
+    url: "https://github.com/automationhomex"
